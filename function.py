@@ -1,3 +1,4 @@
+####Remenber to kepp all zeroes at n+1 term in string######
 def noof(A):
 	q = 0
 	for f in range(0,len(A)):
@@ -9,9 +10,24 @@ def order(B):
 	for i in range(1,len(B)):
 		key = noof(B[i])
 		j = i -1
-		print(type(B[j]),type(noof(B[j])))
-		while j >=0 and key < noof(B[j]):
-			B[j+1] = B[j]
-			j -=1
-		B[j+1] = key
+		while key < noof(B[j]):
+			while j >=0 :
+				B[j+1] = B[j]
+				j -=1
+		B[j+1] = B[i]
 	return B
+
+def common(A,B):
+	count = 0
+	C = ''
+	for i in range(len(A)):
+		if(A[i] != B[i]):
+			C += '-'
+			count +=1
+		else:
+			C +=A[i]
+	if (count ==1):
+		
+		return C
+	else:
+		return None
