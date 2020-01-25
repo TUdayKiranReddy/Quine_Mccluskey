@@ -1,4 +1,3 @@
-####Remenber to kepp all zeroes at n+1 term in string######
 
 def init(A):
 	for i in range(len(A)):
@@ -12,15 +11,16 @@ def noof(A):
 			q+=1
 	return q
 	
-# ~ def order(B):
-	# ~ for i in range(1,len(B)):
-		# ~ key = noof(B[i])
-		# ~ j = i -1	
-		# ~ while j >=0 and key < noof(B[j]):
-			# ~ B[j+1] = B[j]
-			# ~ j -=1
-		# ~ B[j+1] = key
-	# ~ return B
+def order(B):
+	for i in range(1,len(B)):
+		key = noof(B[i])
+		st = B[i]
+		j = i -1	
+		while j >=0 and key < noof(B[j]):
+			B[j+1] = B[j]
+			j -=1
+		B[j+1] = st
+	return B
 
 def common(A,B):
 	count = 0
@@ -69,11 +69,3 @@ def primertr(A):
 			C[i] = C[i][:-1]
 		return C
 		
-def endchk(A):
-	for i in range(len(A)):
-		if(A[i][-1] == '0'):
-			i = 0
-	if(i == 0):
-		return True
-	else:
-		return False
