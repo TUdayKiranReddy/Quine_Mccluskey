@@ -1,4 +1,4 @@
-
+import string
 def init(A):
 	for i in range(len(A)):
 		A[i] = A[i] + '0'
@@ -68,4 +68,13 @@ def primertr(A):
 		for i in range(len(C)):
 			C[i] = C[i][:-1]
 		return C
-		
+
+def expressiongnr(A):
+	c = ""
+	s = string.ascii_lowercase[0:len(A)]
+	for i in range(len(A)):
+		if (A[i] == '0'):
+			c += s[i] +"'"
+		elif (A[i] == '1'):
+			c += s[i]
+	return c
